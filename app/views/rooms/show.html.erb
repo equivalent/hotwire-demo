@@ -1,13 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<%= turbo_frame_tag "room" do %>
-  <p>
-    <strong>Name:</strong>
-    <%= @room.name %>
-  </p>
+<%= turbo_stream_from @room %>
 
-  <%= link_to 'Edit', edit_room_path(@room) %> |
-  <%= link_to 'Back', rooms_path %>
+<%= turbo_frame_tag "room" do %>
+  <%= render @room %>
+
+  <p>
+    <%= link_to 'Edit', edit_room_path(@room) %> |
+    <%= link_to 'Back', rooms_path, "data-turbo-frame": "_top" %>
+  </p>
 <% end %>
 
 <div id="messages">
