@@ -1,9 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @room.name %>
-</p>
+<%= turbo_frame_tag "room" do %>
+  <p>
+    <strong>Name:</strong>
+    <%= @room.name %>
+  </p>
+<% end %>
 
 <%= link_to 'Edit', edit_room_path(@room) %> |
 <%= link_to 'Back', rooms_path %>
