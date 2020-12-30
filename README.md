@@ -12,5 +12,8 @@ But also contains my own experiments
 bin/rails hotwire:install
 
 rails webpacker:install # I'm using webpacker for StimulousJS
+
+
+rails g scaffold room name:string
 ```
 
